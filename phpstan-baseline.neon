@@ -1,0 +1,631 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\Auth\\Guard\:\:logout\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/AuthenticatedSessionController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Http\\Request\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/ConfirmablePasswordController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Http\\Request\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/NewPasswordController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Http\\Request\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/NewPasswordController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Http\\Request\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Http\\Request\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Http\\Request\:\:\$password\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Http/Controllers/Auth/RegisteredUserController.php
+
+		-
+			message: '#^Class App\\Models\\Landlord uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Landlord.php
+
+		-
+			message: '#^Method App\\Models\\Landlord\:\:paymentMethods\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Landlord.php
+
+		-
+			message: '#^Method App\\Models\\Landlord\:\:rooms\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Landlord.php
+
+		-
+			message: '#^Method App\\Models\\Landlord\:\:tenants\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Landlord.php
+
+		-
+			message: '#^Property App\\Models\\Landlord\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Landlord.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Class App\\Models\\Payment uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Method App\\Models\\Payment\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Method App\\Models\\Payment\:\:paymentMethod\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Method App\\Models\\Payment\:\:tenant\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Method App\\Models\\Payment\:\:transaction\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Property App\\Models\\Payment\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/PaymentMethod.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/PaymentMethod.php
+
+		-
+			message: '#^Class App\\Models\\PaymentMethod uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/PaymentMethod.php
+
+		-
+			message: '#^Method App\\Models\\PaymentMethod\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/PaymentMethod.php
+
+		-
+			message: '#^Property App\\Models\\PaymentMethod\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/PaymentMethod.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/Room.php
+
+		-
+			message: '#^Class App\\Models\\MaintenanceLog not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Class App\\Models\\Room uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Class App\\Models\\RoomInspection not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Class App\\Models\\RoomInventory not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:inspections\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:inventories\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:lock\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasOne does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:maintenanceLogs\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:tenants\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Method App\\Models\\Room\:\:vehicles\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 3
+			path: app/Models/Room.php
+
+		-
+			message: '#^Property App\\Models\\Room\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Room.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\)$#'
+			identifier: argument.templateType
+			count: 3
+			path: app/Models/Room.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/RoomAccessLog.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/RoomAccessLog.php
+
+		-
+			message: '#^Class App\\Models\\RoomAccessLog uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/RoomAccessLog.php
+
+		-
+			message: '#^Method App\\Models\\RoomAccessLog\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/RoomAccessLog.php
+
+		-
+			message: '#^Property App\\Models\\RoomAccessLog\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/RoomAccessLog.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/RoomLock.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/RoomLock.php
+
+		-
+			message: '#^Class App\\Models\\RoomLock uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/RoomLock.php
+
+		-
+			message: '#^Method App\\Models\\RoomLock\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/RoomLock.php
+
+		-
+			message: '#^Method App\\Models\\RoomLock\:\:room\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/RoomLock.php
+
+		-
+			message: '#^Property App\\Models\\RoomLock\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/RoomLock.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/Scopes/TenantScope.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Class App\\Models\\RoomInspection not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Class App\\Models\\Tenant uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Method App\\Models\\Tenant\:\:inspections\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Method App\\Models\\Tenant\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Method App\\Models\\Tenant\:\:room\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Method App\\Models\\Tenant\:\:transactions\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Parameter \#1 \$related of method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Property App\\Models\\Tenant\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Unable to resolve the template type TRelatedModel in call to method Illuminate\\Database\\Eloquent\\Model\:\:hasMany\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Models/Tenant.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Class App\\Models\\Transaction uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Method App\\Models\\Transaction\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Method App\\Models\\Transaction\:\:room\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Method App\\Models\\Transaction\:\:tenant\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Property App\\Models\\Transaction\:\:\$casts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Models/Transaction.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Vehicle.php
+
+		-
+			message: '#^Cannot access property \$landlord_id on Illuminate\\Contracts\\Auth\\Authenticatable\|null\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Models/Vehicle.php
+
+		-
+			message: '#^Class App\\Models\\Vehicle uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Vehicle.php
+
+		-
+			message: '#^Method App\\Models\\Vehicle\:\:landlord\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Vehicle.php
+
+		-
+			message: '#^Method App\\Models\\Vehicle\:\:room\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Vehicle.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Room\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Room\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Room\:\:\$lock\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\RoomLock\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\RoomLock\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\RoomLock\:\:\$lock_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\RoomLock\:\:\$room_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Call to an undefined static method App\\Models\\RoomAccessLog\:\:create\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 2
+			path: app/Services/IoT/RoomLockService.php
+
+		-
+			message: '#^Method App\\Services\\Payment\\Gateways\\ManualGateway\:\:charge\(\) should return array\{transaction_id\?\: string, payment_url\?\: string, qr_code_url\?\: string, status\: string\} but returns array\{status\: ''Pending'', payment_url\: null\}\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/Payment/Gateways/ManualGateway.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\PaymentMethod\:\:\$gateway_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentGatewayFactory.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\PaymentMethod\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\PaymentMethod\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Transaction\:\:\$amount\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Transaction\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Transaction\:\:\$landlord_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Transaction\:\:\$tenant_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Call to an undefined static method App\\Models\\Payment\:\:create\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Offset ''status'' on array\{transaction_id\?\: string, payment_url\?\: string, qr_code_url\?\: string, status\: string\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Payment/PaymentService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Room\:\:\$base_price\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/RoomService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Room\:\:\$occupancy_status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/RoomService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Room\:\:\$room_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/RoomService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Tenant\:\:\$room\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/TenantService.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Tenant\:\:\$room_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/TenantService.php
+
+		-
+			message: '#^Call to an undefined static method App\\Models\\Room\:\:findOrFail\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Services/TenantService.php
+
+		-
+			message: '#^Call to an undefined static method App\\Models\\Tenant\:\:create\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Services/TenantService.php
+
+		-
+			message: '#^Cannot call method name\(\) on array\|Illuminate\\Routing\\Route\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: routes/auth.php
+
+		-
+			message: '#^Undefined variable\: \$this$#'
+			identifier: variable.undefined
+			count: 1
+			path: routes/console.php
+
+		-
+			message: '#^Cannot call method name\(\) on array\|Illuminate\\Routing\\Route\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: routes/web.php

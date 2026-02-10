@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset name="ArdaKos">
+    <description>ArdaKos Coding Standards</description>
+    
+    <!-- Base rules -->
+    <rule ref="PSR12"/>
+
+    <rule ref="PSR1.Methods.CamelCapsMethodName">
+        <exclude-pattern>tests/*</exclude-pattern>
+    </rule>
+
+    <rule ref="PSR1.Files.SideEffects">
+        <exclude-pattern>tests/Pest.php</exclude-pattern>
+    </rule>
+    
+    <!-- Paths to check -->
+    <file>app</file>
+    <file>routes</file>
+    <file>tests</file>
+    
+    <!-- Exclude vendor and generated files -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/bootstrap/cache/*</exclude-pattern>
+    
+    <!-- Show progress -->
+    <arg value="p"/>
+    
+    <!-- Use colors -->
+    <arg name="colors"/>
+    
+    <!-- Show sniff codes -->
+    <arg value="s"/>
+</ruleset>
