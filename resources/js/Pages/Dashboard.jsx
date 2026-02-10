@@ -1,18 +1,19 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, usePage, router } from '@inertiajs/react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card";
-import { Button } from "@/Components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/Components/ui/select";
+import { Badge } from "@/Components/ui/badge";
+import { Building2, Users, Bed, CreditCard, DoorClosed, DoorOpen, LayoutGrid, AlertCircle } from 'lucide-react';
 import { clsx } from 'clsx';
 
 export default function Dashboard({ auth, landlords, rooms, stats }) {
     const { url } = usePage();
     const queryParams = new URLSearchParams(window.location.search);
-    const currentLandlordId = queryParams.get('landlord_id');
+    const currentLandlordId = queryParams.get('landlord_id') || "";
 
-    const handleLandlordSwitch = (e) => {
-        const landlordId = e.target.value;
-        if (landlordId) {
-            router.get(route('dashboard'), { landlord_id: landlordId });
+    const handleLandlordSwitch = (value) => {
+        if (value && value !== "all") {
+            router.get(route('dashboard'), { landlord_id: value });
         } else {
             router.get(route('dashboard'));
         }
@@ -23,93 +24,144 @@ export default function Dashboard({ auth, landlords, rooms, stats }) {
             user={auth.user}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
         >
-            <Head title="Dashboard" />
+            <Head title="Command Center" />
 
             <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-8">
+
+                    {/* Header & Controls */}
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h1 className="text-2xl font-bold tracking-tight">Overview</h1>
+                            <p className="text-muted-foreground text-gray-500">
+                                Real-time updates on occupancy and revenue.
+                            </p>
+                        </div>
+
+                        {/* Landlord Switcher */}
+                        {landlords.length > 0 && (
+                            <div className="w-full md:w-[250px]">
+                                <Select value={currentLandlordId} onValueChange={handleLandlordSwitch}>
+                                    <SelectTrigger>
+                                        <SelectValue placeholder="Select Landlord" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="all">All Landlords</SelectItem>
+                                        {landlords.map((landlord) => (
+                                            <SelectItem key={landlord.id} value={String(landlord.id)}>
+                                                {landlord.name}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        )}
+                    </div>
 
                     {/* Stats Overview */}
                     <div className="grid gap-4 md:grid-cols-3">
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">Total Rooms</CardTitle>
+                                <Building2 className="h-4 w-4 text-muted-foreground text-gray-400" />
                             </CardHeader>
                             <CardContent>
                                 <div className="text-2xl font-bold">{stats.total_rooms}</div>
+                                <p className="text-xs text-muted-foreground text-gray-500">
+                                    Across all properties
+                                </p>
                             </CardContent>
                         </Card>
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium">Occupied</CardTitle>
+                                <CardTitle className="text-sm font-medium">Occupancy Rate</CardTitle>
+                                <Users className="h-4 w-4 text-muted-foreground text-gray-400" />
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold text-green-600">{stats.occupied}</div>
+                                <div className="text-2xl font-bold">
+                                    {stats.total_rooms > 0
+                                        ? Math.round((stats.occupied / stats.total_rooms) * 100)
+                                        : 0}%
+                                </div>
+                                <div className="flex items-center gap-2 mt-1">
+                                    <Badge variant="secondary" className="text-xs">
+                                        {stats.occupied} Occupied
+                                    </Badge>
+                                    <Badge variant="outline" className="text-xs">
+                                        {stats.available} Available
+                                    </Badge>
+                                </div>
                             </CardContent>
                         </Card>
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium">Available</CardTitle>
+                                <CardTitle className="text-sm font-medium">Revenue (Est)</CardTitle>
+                                <CreditCard className="h-4 w-4 text-muted-foreground text-gray-400" />
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold text-blue-600">{stats.available}</div>
+                                <div className="text-2xl font-bold">IDR ...</div>
+                                <p className="text-xs text-muted-foreground text-gray-500">
+                                    Monthly projection
+                                </p>
                             </CardContent>
                         </Card>
                     </div>
-
-                    {/* Landlord Switcher (Only visible if landlords data is passed) */}
-                    {landlords.length > 0 && (
-                        <div className="flex items-center space-x-4 bg-white p-4 rounded-lg shadow">
-                            <label className="font-medium text-gray-700">Switch Landlord:</label>
-                            <select
-                                className="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
-                                onChange={handleLandlordSwitch}
-                                value={currentLandlordId || ''}
-                            >
-                                <option value="">Select Landlord...</option>
-                                {landlords.map((landlord) => (
-                                    <option key={landlord.id} value={landlord.id}>
-                                        {landlord.name}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-                    )}
 
                     {/* Room Grid */}
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                        <h3 className="text-lg font-medium mb-4">Room Status</h3>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                            {rooms.map((room) => (
-                                <Card key={room.id} className={clsx(
-                                    "cursor-pointer hover:shadow-md transition-shadow",
-                                    room.occupancy_status === 'Terisi' ? "border-l-4 border-l-red-500" : "border-l-4 border-l-green-500"
-                                )}>
-                                    <CardContent className="p-4">
-                                        <div className="font-bold text-lg">{room.room_number}</div>
-                                        <div className="text-sm text-gray-500">{room.room_type}</div>
-                                        <div className={clsx(
-                                            "mt-2 text-xs font-semibold px-2 py-1 rounded-full inline-block",
-                                            room.occupancy_status === 'Terisi' ? "bg-red-100 text-red-800" : "bg-green-100 text-green-800"
-                                        )}>
-                                            {room.occupancy_status || 'Tersedia'}
+                    <Card className="col-span-4">
+                        <CardHeader>
+                            <CardTitle>Room Status</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                                {rooms.map((room) => (
+                                    <div
+                                        key={room.id}
+                                        className={clsx(
+                                            "relative group flex flex-col items-center justify-center p-4 border rounded-xl transition-all duration-200 hover:shadow-lg cursor-pointer",
+                                            room.occupancy_status === 'Terisi'
+                                                ? "bg-red-50/50 border-red-100 hover:border-red-200"
+                                                : "bg-green-50/50 border-green-100 hover:border-green-200"
+                                        )}
+                                    >
+                                        <div className="absolute top-2 right-2">
+                                            {room.occupancy_status === 'Terisi' ? (
+                                                <DoorClosed className="h-4 w-4 text-red-400" />
+                                            ) : (
+                                                <DoorOpen className="h-4 w-4 text-green-400" />
+                                            )}
                                         </div>
+
+                                        <div className="text-xl font-bold text-gray-800 mb-1">{room.room_number}</div>
+                                        <div className="text-xs font-medium text-gray-500 mb-3">{room.room_type}</div>
+
+                                        <Badge variant={room.occupancy_status === 'Terisi' ? "destructive" : "success"}>
+                                            {room.occupancy_status === 'Terisi' ? 'Occupied' : 'Available'}
+                                        </Badge>
+
                                         {room.tenants && room.tenants[0] && (
-                                            <div className="mt-2 text-xs text-gray-600 truncate">
-                                                {room.tenants[0].name}
+                                            <div className="mt-3 text-xs text-gray-600 font-medium flex items-center gap-1">
+                                                <Users className="h-3 w-3" />
+                                                <span className="truncate max-w-[80px]">{room.tenants[0].name}</span>
                                             </div>
                                         )}
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-
-                        {rooms.length === 0 && (
-                            <div className="text-center py-12 text-gray-500">
-                                No rooms found. Select a landlord or add specific rooms.
+                                    </div>
+                                ))}
                             </div>
-                        )}
-                    </div>
+
+                            {rooms.length === 0 && (
+                                <div className="flex flex-col items-center justify-center py-12 text-center">
+                                    <div className="bg-gray-100 p-3 rounded-full mb-4">
+                                        <LayoutGrid className="h-6 w-6 text-gray-400" />
+                                    </div>
+                                    <h3 className="text-lg font-medium text-gray-900">No rooms found</h3>
+                                    <p className="text-gray-500 mt-1 max-w-sm">
+                                        Select a landlord to view their rooms, or add new rooms to the system.
+                                    </p>
+                                </div>
+                            )}
+                        </CardContent>
+                    </Card>
 
                 </div>
             </div>
